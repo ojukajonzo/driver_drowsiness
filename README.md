@@ -26,6 +26,7 @@ Dataset (if using ML)
  You’ll need images/videos of drivers (drowsy vs. alert). Options:
  Public Datasets: Search for "drowsiness detection dataset" (e.g., NTHU Drowsy Driver Dataset).
  DIY: Record your own videos mimicking drowsy/alert states.
+
 # Step 3: Design the System
 A typical drowsiness detection system has these components:
 
@@ -42,22 +43,25 @@ Basic Algorithm
    If EAR drops below a threshold (e.g., 0.2) for several frames, assume eyes are closed.
  Detect yawning by measuring mouth aspect ratio.
  Monitor head tilt using facial landmarks.
+ 
 # Step 4: Implementation Plan
 Here’s a beginner-friendly roadmap with code snippets:
 
-## 1. Setup Environment
-Install dependencies:
-pip install opencv-python dlib numpy playsound
-For Dlib, you’ll need a pre-trained facial landmark model (e.g., shape_predictor_68_face_landmarks.dat). Download it from Dlib’s official site or a trusted source.
-##2. Basic Code Structure
- (check the code in the file named driver deetction)
-## 3. Test and Tune
-Run the code with your webcam.
-Adjust EAR_THRESHOLD and CONSECUTIVE_FRAMES based on how sensitive you want the detection to be.
-Add yawning detection or head pose estimation if needed (I can provide code for those too!).
-# Step 5: Enhance the Project
-Once the basics work, consider these upgrades:
-
+ ## 1. Setup Environment
+ Install dependencies:
+ pip install opencv-python dlib numpy playsound
+ For Dlib, you’ll need a pre-trained facial landmark model (e.g., shape_predictor_68_face_landmarks.dat).
+ Download it from Dlib’s official site or a trusted source.
+ 
+ ##2. Basic Code Structure
+  (check the code in the file named driver deetction)
+  
+ ## 3. Test and Tune
+ Run the code with your webcam.
+ Adjust EAR_THRESHOLD and CONSECUTIVE_FRAMES based on how sensitive you want the detection to be.
+ Add yawning detection or head pose estimation if needed (I can provide code for those too!).
+ # Step 5: Enhance the Project
+ Once the basics work, consider these upgrades: 
     Machine Learning: Train a model (e.g., CNN) on a drowsiness dataset for better accuracy.
     Multi-Driver Support: Handle multiple faces in the frame.
     Embedded Deployment: Port it to a Raspberry Pi with a camera module.
